@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server1": "ng serve",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "preinstall": "npm install -g --silent @angular/cli"
   },
   "private": true,
   "dependencies": {
