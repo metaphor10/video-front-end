@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - '6.11'
+before_script: # commands to run before the build step
+  - npm install -g --silent @angular/cli
+script: # the build step
+  - npm run build
+deploy:
+  provider: heroku
+  app: video-front-end-ab
+  api_key:
+    secure: XOWW+MEDiHQZIX0IkITPdEiq3BDSRC/H0h/1hcSO3ZbYjzmT/US0wTDl0yisgmc9BDBsvUHZFcM14h2TiNJ4A1gHxtI9zxJDQPYmVpLDMFxQI8psgACW/xN61b08RsmEmGgKyfLv5VKNNyfOo/TE/FDCtgUXhNEwAfmXbdcLdQ+NnfrVprpGjXaoAcPjuMh55OVeFB4ivnG9qLNPkb0QM1Qs8MJgJRZgzwe8u9Hbzr/n9TifGAqndXDe1Lr+aB9ua9+p45JbHwBqpMfFnBpZl41KJyp+4/jml3nf3xGvMM7VzwtjYFY6ld2xNXCpLVtpQ+2zYFPzZ8L73V9uWOItGKWe1ApDbW82/LvdphPILcge8BxC42qC66+I7EsPuGCrFmU0OAzsCDMp4lGxAIukmZwo5UC56KNbTxNBk8209yd+qygCksSFOVyjhliA0PoP3O8DpIJZKGIVUx0vq48ZhZXp0uhlun9w7cZvOaP35weX7VYMn5Myfr9dlQ30OP6srWwAZJRui68BHTabY6T/7bvULSr8QENBvHFg2xTyf3l9ySi9f3FeDjlm6vHjvJ8mCprDrype7ULi7JHSv8jlDv/+t3GGyTCWohEsenl90ehHVjqvvOFQcG9u3hh/K/hq/wofEy8T4+dMa+BHzHpvnAdNhcAVPwXDL6s0m56N8wk=
