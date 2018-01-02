@@ -17,7 +17,7 @@ var request = require("request");
 
 router.post('/signup', function(req, res) {
 console.log('req', req.body);
-  request.post({url:'http://localhost:3000/api/signup', form: {username:req.body.username, req.body.password}}, function(err,httpResponse,body){ /* ... */
+  request.post({url:'http://localhost:3000/api/signup', form: {username:req.body.username, password: req.body.password}}, function(err,httpResponse,body){ /* ... */
       if (err) {
         return console.error('upload failed:', err);
       }
