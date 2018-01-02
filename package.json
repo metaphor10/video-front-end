@@ -2,6 +2,7 @@
   "name": "angular2-registration-login-example-cli",
   "version": "0.0.0",
   "license": "MIT",
+  "engines" : { "node" : ">=6.11" },
   "scripts": {
     "ng": "ng",
     "start": "node ./server/bin/www",
