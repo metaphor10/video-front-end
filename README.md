@@ -1,5 +1,4 @@
-# angular2-registration-login-example-cli
+# Video front end
 
-Angular 2/5 User Registration and Login Example with Angular CLI
-
-To see a demo and further details go to http://jasonwatmore.com/post/2016/09/29/angular-2-user-registration-and-login-example-tutorial
+you need to use the user server for the login.
+and the video server for the video.
