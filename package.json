@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "server1": "ng serve",
-    "postinstall": "npm run build"
+    "postinstall": "yarn build"
   },
   "private": true,
   "dependencies": {
