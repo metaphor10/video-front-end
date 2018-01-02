@@ -13,11 +13,12 @@ var router = express.Router();
 var User = require("../models/user");
 var Book = require("../models/book");
 var request = require("request");
+var authApp = process.env.AUTH_APP;
+var videoApp = process.env.VIDEO_APP;
 
 
 router.post('/signup', function(req, res) {
-console.log('req', req.body);
-  request.post({url:'http://localhost:3000/api/signup', form: {username:req.body.username, password: req.body.password}}, function(err,httpResponse,body){ /* ... */
+  request.post({url: authApp + '/api/signup', form: {username:req.body.username, password: req.body.password}}, function(err,httpResponse,body){ /* ... */
       if (err) {
         return console.error('upload failed:', err);
       }
@@ -27,8 +28,7 @@ console.log('req', req.body);
 });
 
 router.post('/signin', function(req, res) {
-  console.log('req', req.body);
-  request.post({url:'http://localhost:3000/api/signin', form: {username:req.body.username, password: req.body.password}}, function(err,httpResponse,body){ /* ... */
+  request.post({url:authApp + '/api/signin', form: {username:req.body.username, password: req.body.password}}, function(err,httpResponse,body){ /* ... */
       if (err) {
         return console.error('upload failed:', err);
       }
@@ -38,7 +38,7 @@ router.post('/signin', function(req, res) {
 });
 
 router.get('/video', function (req, res){
-  req.pipe(request('http://localhost:3007/api/v1/video')).pipe(res)
+  req.pipe(request(videoApp + '/api/v1/video')).pipe(res)
 })
 
 module.exports = router;
