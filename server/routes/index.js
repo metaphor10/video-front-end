@@ -3,15 +3,6 @@ var fs = require('fs');
 var router = express.Router();
 
 /* GET home page. */
-var mongoose = require('mongoose');
-var passport = require('passport');
-var config = require('../config/database');
-require('../config/passport')(passport);
-var express = require('express');
-var jwt = require('jsonwebtoken');
-var router = express.Router();
-var User = require("../models/user");
-var Book = require("../models/book");
 var request = require("request");
 var authApp = process.env.AUTH_APP;
 var videoApp = process.env.VIDEO_APP;
