@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var router = express.Router();
 
 /* GET home page. */
@@ -16,7 +17,7 @@ var request = require("request");
 
 router.post('/signup', function(req, res) {
 console.log('req', req.body);
-  request.post({url:'http://localhost:3000/api/signup', form: {username:'username', password: 'password'}}, function(err,httpResponse,body){ /* ... */
+  request.post({url:'http://localhost:3000/api/signup', form: {username:req.body.username, req.body.password}}, function(err,httpResponse,body){ /* ... */
       if (err) {
         return console.error('upload failed:', err);
       }
@@ -35,5 +36,9 @@ router.post('/signin', function(req, res) {
     res.json(JSON.parse(body))
   })
 });
+
+router.get('/video', function (req, res){
+  req.pipe(request('http://localhost:3007/api/v1/video')).pipe(res)
+})
 
 module.exports = router;
