@@ -7,8 +7,6 @@ var logger = require('morgan');
 var morgan = require('morgan');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
-var api = require('./routes/api');
 var app = express();
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -39,7 +37,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.sendFile(path.join(__dirname + '/../dist/index.html'));
 });
 
 module.exports = app;
