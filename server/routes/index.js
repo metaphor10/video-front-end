@@ -9,7 +9,6 @@ var videoApp = process.env.VIDEO_APP;
 
 
 router.post('/signup', function(req, res) {
-  console.log('obj', authApp + '/api/signup');
   request.post({url: authApp + '/api/signup', form: {username:req.body.username, password: req.body.password}}, function(err,httpResponse,body){ /* ... */
       if (err) {
         return console.error('upload failed:', err);
@@ -20,7 +19,6 @@ router.post('/signup', function(req, res) {
 });
 
 router.post('/signin', function(req, res) {
-  console.log('obj', authApp + '/api/signin');
   request.post({url:authApp + '/api/signin', form: {username:req.body.username, password: req.body.password}}, function(err,httpResponse,body){ /* ... */
       if (err) {
         return console.error('upload failed:', err);
