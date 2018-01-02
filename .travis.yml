@@ -2,9 +2,9 @@ language: node_js
 node_js:
 - '6.11'
 before_script:
-- npm install -g --silent @angular/cli
+- yarn global add @angular/cli
 script:
-- npm run build
+- yarn build
 deploy:
   provider: heroku
   app: video-front-end-ab
