@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('angular2-registration-login-example-cli App', () => {
+describe('video-front-end App', () => {
   let page: AppPage;
 
   beforeEach(() => {
